@@ -37,7 +37,22 @@ const handleChange=(e)=>{
   e.preventDefault();
 
   const { name, email,  password} = user; //object destructuring
-  const res = await fetch("/registers", {
+  // const res = await fetch("/registers", {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify({
+  //     //when sending data  to a web server ,the data has to be a string
+  //     name,
+  //     email,
+     
+  //     password,
+  //      //as key and value pair is same ,no need to write it twice.
+  //   }),
+  // });
+
+  const res = await fetch("https://todoapp-4ojt.onrender.com/registers", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

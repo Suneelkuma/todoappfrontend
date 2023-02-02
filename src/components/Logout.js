@@ -5,14 +5,25 @@ const Logout = () => {
 
     const navigate=useNavigate();
 const callLogoutPage=async()=>{
-    const res = await fetch('/logout', {
-        method: "GET",
-        headers:{
-          Accept:"application/json",//for accepting token
+    // const res = await fetch('/logout', {
+    //     method: "GET",
+    //     headers:{
+    //       Accept:"application/json",//for accepting token
         
-        },
-        credentials:"include"//for token
-      }).then((res)=>{
+    //     },
+    //     credentials:"include"//for token
+    //   })
+
+    const res = await fetch('https://todoapp-4ojt.onrender.com/logout', {
+      method: "GET",
+      headers:{
+        Accept:"application/json",//for accepting token
+      
+      },
+      credentials:"include"//for token
+    })
+
+      .then((res)=>{
         navigate('/signin',{replace:true})
         if(res.status!==200){
             const error=new Error(res.error);

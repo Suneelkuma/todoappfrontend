@@ -9,7 +9,16 @@ const Home = () => {
  
 const callAboutPage = async () => {
 try {
-  const res = await fetch('/about', {
+  // const res = await fetch('/about', {
+  //   method: "GET",
+  //   headers:{
+  //     Accept:"application/json",//for accepting token
+    
+  //   },
+  //   credentials:"include"//for token
+  // });
+
+  const res = await fetch('https://todoapp-4ojt.onrender.com/about', {
     method: "GET",
     headers:{
       Accept:"application/json",//for accepting token

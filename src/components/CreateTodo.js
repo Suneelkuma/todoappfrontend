@@ -9,7 +9,18 @@ const CreateTodo = () => {
     const handleLogin = async (e) => {
       e.preventDefault();
   
-      const res = await fetch("/createTodo", {
+      // const res = await fetch("/createTodo", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({
+      //     activity, 
+      //     status,
+      //     action
+      //   }),
+      // });
+      const res = await fetch("https://todoapp-4ojt.onrender.com/createTodo", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -20,6 +31,7 @@ const CreateTodo = () => {
           action
         }),
       });
+
       const data = res.json();
       console.log(data);
   

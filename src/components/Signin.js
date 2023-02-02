@@ -9,7 +9,18 @@ const Signin = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("/signin", {
+    // const res = await fetch("/signin", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     email, 
+    //     password,
+    //   }),
+    // });
+
+    const res = await fetch("https://todoapp-4ojt.onrender.com/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -19,6 +30,7 @@ const Signin = () => {
         password,
       }),
     });
+
     const data = res.json();
     console.log(data);
 
